@@ -1,0 +1,137 @@
+[
+{
+  "Name" : "Tax Lot Appraisal with Accruals",
+  "Type" : "RSL",
+  "Text" : "taxlotappacc.rsl",
+  "Columns" : [
+    {
+      "Name" : "Sort",
+      "DataType" : "text"
+    },
+    {
+      "Name" : "Invest",
+      "DataType" : "text"
+    },
+    {
+      "Name" : "Ccy",
+      "DataType" : "text"
+    },
+    {
+      "Name" : "LotId",
+      "DataType" : "number"
+    },
+    {
+      "Name" : "Qty",
+      "DataType" : "number"
+    },
+    {
+      "Name" : "CostUnit",
+      "DataType" : "number"
+    },
+    {
+      "Name" : "CostBook",
+      "DataType" : "number"
+    },
+    {
+      "Name" : "MVBook",
+      "DataType" : "number"
+    },
+    {
+      "Name" : "TaxLotDay",
+      "DataType" : "datetime"
+    }
+  ]
+},
+
+{
+  "Name" : "Transaction History",
+  "Type" : "RSL",
+  "Text" : "tranhist.rsl",
+  "Columns" : [
+    {
+      "Name" : "TranType",
+      "DataType" : "text"
+    },
+    {
+      "Name" : "Custodian",
+      "DataType" : "text",
+      "Link" : {
+        "ClassName" : "Investment",
+        "KeyName" :  "NameSort"
+      }
+
+    },
+    {
+      "Name" : "Invest",
+      "DataType" : "text"
+    },
+    {
+      "Name" : "Quantity",
+      "DataType" : "number"
+    },
+    {
+      "Name" : "Price",
+      "DataType" : "number"
+    },
+    {
+      "Name" : "LocalNet",
+      "DataType" : "number"
+    },
+    {
+      "Name" : "BookNet",
+      "DataType" : "number"
+    },
+    {
+      "Name" : "SDate",
+      "DataType" : "datetime"
+    },
+    {
+      "Name" : "TDate",
+      "DataType" : "datetime"
+    }
+  ]
+}
+
+,
+  {
+  "Name" : "Appraisal Summary",
+  "Type" : "RSL",
+  "Text" : "appsum.rsl",
+  "Columns" : [
+    {
+      "Name" : "Invest",
+      "DataType" : "text"
+    },
+    {
+      "Name" : "CostBook",
+      "DataType" : "number"
+    },
+    {
+      "Name" : "MVBook",
+      "DataType" : "number"
+    }
+  ]
+}
+,
+
+{
+  "Name" : "Portfolios",
+  "Type" : "GSQL",
+  "Text" : "NameSort, Description  from Portfolio ORDER BY upper(NameSort)",
+  "Columns" : [
+    {
+
+      "Name" : "NameSort",
+      "DataType" : "text",
+      "Link" : {
+        "ClassName" : "Portfolio",
+        "KeyName" :  "NameSort"
+      }
+    },
+    {
+      "Name" : "Description",
+      "DataType" : "text"
+    }
+  ]
+}
+]
